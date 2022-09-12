@@ -12,15 +12,20 @@ const displayDate = () => {
 
   document.getElementById("display-element").innerHTML = currentDate;
 }
- 
 
 // Write a JavaScript program to convert a number to a string.
 
-
+const numToString = (n) => {
+  document.getElementById("display-string").innerHTML = n.toString();
+  console.log(`numToString ${n} is a ${typeof(n.toString())}`)
+}
 
 // Write a JavaScript program to convert a string to the number.
 
-
+const stringToNum = (s) => {
+  document.getElementById("display-number").innerHTML = parseInt(s);
+  console.log(`stringToNum ${s} is a ${typeof(parseInt(s))}`)
+}
 
 // Write a JavaScript program that takes in different datatypes and prints out whether they are a:
   // * Boolean
@@ -29,22 +34,96 @@ const displayDate = () => {
   // * Number
   // * NaN
   // * String
-  
+
+  const stringType = (t) => {
+    console.log(`${t} is a ${typeof(t)}`)
+    switch(typeof(t)) {
+      case 'boolean':
+        console.log(`${t} is a boolean`)
+        break;
+      case 'number':
+        console.log(`${t} is a number`)
+        break;
+      case 'string':
+        console.log(`${t} is a string`)
+        break;
+      case undefined:
+        console.log(`${t} is undefined`)
+        break;
+      case NaN:
+        console.log(`${t} is Not a Number`)
+        break;
+      case null:
+        console.log(`Nothing was given`)
+        break;
+      default:
+        console.log("Literally I don't know what that is..")
+    }
+  }
 
   
 // Write a JavaScript program that adds 2 numbers together.
 
-
+const numPlusNum = (m) => {
+  document.getElementById("display-math").innerHTML = parseInt(m);
+  let result = parseInt(m) + 1
+  console.log(`${m} + 1 is ${result}`)
+}
 
 // Write a JavaScript program that runs only when 2 things are true.
 
-
+const whenTwoTrue = (f, s) => {
+  switch(f) {
+    case True:
+      switch(s) {
+        case True:
+          console.log("Both are True.")
+          break;
+      }
+    default:
+      console.log("One or none of given entities are False.")
+  }
+}
 
 // Write a JavaScript program that runs when 1 of 2 things are true.
 
-
+const whenOneTrue = (f, s) => {
+  switch(f) {
+    case True:
+      switch(s) {
+        case False:
+          console.log("First is True, second is False.")
+          break;
+      }
+    default:
+      console.log("Both or none are True.")
+  }
+  switch(s) {
+    case True:
+      switch(f) {
+        case False:
+          console.log("Second is True, first is False.")
+          break;
+      }
+    default:
+      console.log("Both or none are True")
+  }
+}
 
 // Write a JavaScript program that runs when both things are not true.  
+
+const whenTwoFalse = (f, s) => {
+  switch(f) {
+    case False:
+      switch(s) {
+        case False:
+          console.log("Both are False.")
+          break;
+      }
+    default:
+      console.log("One or none of given entities are True.")
+  }
+}
 
 // ***************************
 //         PART TWO
